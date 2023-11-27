@@ -1,6 +1,7 @@
 """Node Class."""
 
 from __future__ import annotations
+from typing import Optional
 
 
 class Node:
@@ -22,11 +23,20 @@ class Node:
         else:
             return f"{self.data} -> {self.next}"
         
-    def head(self):
-        return None
+    def head(self) -> int:
+        """Returns the `data` attribute for the first element in the linked list."""
+        return self.data
     
-    def tail(self):
-        return None
+    def tail(self) -> (Node | None):
+        """Returns a linked list of every element minus the head."""
+        if self.next is None:
+            return None
+        else:
+            return Optional[Node]
     
-    def last(self):
-        return None
+    def last(self) -> int:
+        """Returns the `data` of the *last* element in the linked list."""
+        if self.next is None:
+            return self.data
+        else:
+            return self.next.last()
